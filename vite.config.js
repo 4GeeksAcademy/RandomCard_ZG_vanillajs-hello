@@ -6,7 +6,10 @@ export default defineConfig({
     // Specify the output directory for the build. This path is relative to your project root.
     outDir: '../dist',
   },
-  server: {
-    port: 3000,
-  },
+
+    server: {
+      watch: {
+        usePolling: true, // Enable polling for file changes
+      },
+    }
 });
