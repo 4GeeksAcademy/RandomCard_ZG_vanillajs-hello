@@ -16,7 +16,7 @@ function getRandomFromArray(values){
   return values[randomIndex];
 }
 
-function generateCard(){
+window.generateCard = function generateCard(){
   let cardFigures = getRandomFromArray(["♦","♥","♠","♣"]);
   let cardValues = getRandomFromArray(["A", 1,2,3,4,5,6,7,8,9,10, "J","Q", "K"]);
   let cardContainer = document.getElementById("card");
@@ -49,18 +49,13 @@ function generateCard(){
 
 
   //Populate card Div
+  cardContainer.innerHTML ='';
   cardContainer.appendChild(topFigure);
   cardContainer.appendChild(middleValue);
-  cardContainer.appendChild(bottomFigure);
-  
+  cardContainer.appendChild(bottomFigure); 
 }
 
-window.onload = function() {
-  //write your code here
-  console.log("Card Generation System Ready");
-  generateCard();
-};
-
-
-
+window.onload = function(){
+  generateCard(); 
+}
 
